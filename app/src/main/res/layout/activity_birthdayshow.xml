@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".birthdayshow"
+    android:fitsSystemWindows="true">
+
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbar"
+    android:background="#6019C8"
+    app:titleTextColor="@color/white"
+    app:subtitleTextColor="@color/white"
+    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/birthname"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/black_and_white_picture"
+        android:text="Birthday"
+        android:textSize="50sp"
+        android:gravity="center"/>
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:lottie_rawRes="@raw/birthday"
+    android:layout_weight="1"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendwish"
+        android:text="Send wish"
+        android:background="@drawable/buttonbg"
+        android:layout_weight="0"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:layout_marginBottom="5dp"/>
+
+</LinearLayout>
