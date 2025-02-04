@@ -9,6 +9,8 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Log;
 
@@ -23,8 +25,9 @@ public class NotificationReceiver extends BroadcastReceiver {
         String channelId = "my_channel_id";
         int notificationId = 1;
         Intent inte=new Intent(context,birthdayshow.class);
-        intent.putExtra("name",s);
+        inte.putExtra("name",s);
         Log.e("Notification set",s);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { // Only needed for Android 8.0+
             // Unique ID for your channel
             CharSequence channelName = "My Channel";
@@ -46,8 +49,10 @@ public class NotificationReceiver extends BroadcastReceiver {
                 inte,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
+        Bitmap large= BitmapFactory.decodeResource(context.getResources(), R.drawable.wishontime);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)// Replace with your own app icon
+                .setSmallIcon(R.drawable.notify)// Replace with your own app icon
+                .setLargeIcon(large)
                 .setContentTitle(s+"\'s Birthday\uD83C\uDF89")
                 .setContentText("Let\'s wish.")
                 .setContentIntent(pendingIntent)

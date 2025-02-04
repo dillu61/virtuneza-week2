@@ -277,10 +277,10 @@ if(year != 0 && month != 0 && day != 0)
     PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT| PendingIntent.FLAG_IMMUTABLE);
     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
     Log.e("alarmmanager",""+calendar.getTime());
+       // alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), yearlyInterval, pendingIntent);
+    alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), yearlyInterval, pendingIntent);
-   // alarmManager.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis()+(10*1000),pendingIntent);
-        Log.e("sucess","to set alarm");
+        Log.e("sucess","to set alarm"+calendar.getTimeInMillis());
 
 
 
